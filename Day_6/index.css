@@ -1,0 +1,208 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: rgb(76,180,196);
+background: linear-gradient(77deg, rgba(76,180,196,1) 0%, rgba(69,82,167,1) 51%, rgba(60,3,71,1) 100%);;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.profile_card
+{
+  width: 350px;
+  height: 350px;
+  background: rgb(32, 4, 61);
+  border-radius: 10px;
+  box-shadow: -3px 1px 14px 1px rgba(1, 1, 1, 0.473);
+  display: flex;
+  flex: 1;
+}
+.p-left
+{
+  display: flex;
+  position: absolute;
+  padding: auto;
+}
+.profile .pic
+{
+  position: relative;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.profile img
+{
+  border-radius: 50%;
+transform: scale(0.16);
+position: relative;
+bottom: 180px;
+right: 130px;
+}
+.profile .pic::before
+{
+  content: "";
+  height: 110%;
+  width: 110%;
+  position: absolute;
+  border: 2px solid;
+  border-radius: 55%;
+  border-color: rgb(182, 94, 255)transparent rgb(182, 94, 255)rgb(182, 94, 255);
+  top: 25px;
+  left: 76px;
+  transition: 2s;
+}
+.profile .pic::after
+{
+  content: "";
+  height: 96%;
+  width: 96%;
+  position: absolute;
+  border: 2px solid;
+   
+  border-radius: 50%;
+  border-color: rgb(130, 30, 202) rgb(130, 30, 202)rgb(130, 30, 202)transparent;
+  top: 31px;
+  left: 82px;
+  transition: 2s;
+}
+
+.profile .pic:hover::before
+{
+   transform: rotate(360deg);
+}
+.profile .pic:hover::after
+{
+   transform: rotate(-360deg);
+}
+
+.p-name, .p-title
+{
+  font-weight: 800;
+  color: white;
+  position: relative;
+  top: 50px;
+  left: 65px;
+  font-size: 21px;
+}
+
+.p-title
+{
+  top: 70px;
+  font-size: 13px;
+  font-weight: 400;
+  left: -51px;
+}
+.btn
+{
+  position: absolute;
+  top: 215px;
+  left: 48px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.f-btn button,.m-btn button
+{
+  background: transparent;
+  color: white;
+  outline: none;
+  border: 2px solid rgb(130, 30, 202);
+  border-radius: 40px;
+  width: 165px;
+  height: 35px;
+  font-weight: 800;
+  transition: all 0.2s;
+}
+.f-btn button:hover
+{
+  background:  rgb(130, 30, 202);
+
+  
+}
+.m-btn button:hover
+{
+  background:  rgb(130, 30, 202);
+
+  
+}
+.p-right
+{
+  position: relative;
+display: flex;
+flex-direction: column;
+left: 235px;
+width: 115px;
+display: grid;
+grid-template-columns: repeat(3 , 1fr);
+grid-template-rows: repeat(3 , 1fr);
+row-gap: 2px;
+grid-template-areas:
+"posts  " 
+"likes  " 
+"followers";
+background-color:white;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+.stats{
+  background-color: rgb(72, 1, 148);
+color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  left: 0px;
+  position: relative;
+  width: 164%;
+}
+
+h3,h5,h4{
+  margin: 0px;
+}
+
+h5{
+  font-weight: normal;
+  text-transform: capitalize;
+}
+
+.posts{
+  grid-area: posts;
+  border-top-right-radius: 9px;
+}
+
+.likes{
+  grid-area: likes;
+}
+
+.followers{
+  grid-area: followers;
+  border-bottom-right-radius: 9px;
+}
+
+.stats:hover{
+  background-color:  rgb(182, 94, 255);
+  color: white;
+}
