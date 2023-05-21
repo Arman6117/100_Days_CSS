@@ -1,0 +1,175 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import url(https://100dayscss.com/codepen/css/font-awesome.min.css);
+
+// use only the available space inside the 400x400 frame
+$speed: 5s; // 60s for realtime 
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+    background: #4C4C4C;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+      width: 212px;
+      height: 212px;
+    top: 87px;
+    left: 87px;
+      background: #242424;
+      border: 7px solid #3A3A3A;
+      border-radius: 50%;
+      text-align: center;
+      justify-content: center;
+}
+.date
+{
+    color: white;
+    position: absolute;
+    top: 160px;
+    left: 149px;
+    font-size: 12px;
+    width: 100%;
+}
+.time
+{
+    color: white;
+    position: absolute;
+    top: 175px;
+    left: 145px;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 100%;
+    margin: 4px 0;
+}
+.beat
+{
+    position: absolute;
+    top: 220px;
+    left: 153px;
+    font-size: 10px;
+    font-weight: 800;
+
+span
+{
+    color: #F85B5B;
+		font-size: 10px;
+		float: left;
+		margin-top: 2px;
+		margin-right: 4px;
+   animation: beat .9s ease-in-out infinite;
+
+}
+}
+.energy
+{
+    position: absolute;
+top: 220px;
+font-size: 10px;
+left: 201px;
+}
+@for $i from 1 through 15 {
+	
+	.point-set-#{$i} {
+		position: absolute;
+		height: 188px;
+		width: 188px;
+		top: 12px;
+		left: 12px;
+		transform: rotate( (($i - 1)*6) + deg );
+			
+		.point-1 {
+			position: absolute;
+			width: 2px;
+			height: 2px;
+			top: 0;
+			left: 93px;
+			background: #D3D3D3;
+			border-radius: 50%;
+		}
+		
+		.point-2 {
+			@extend .point-1;
+			top: 93px;
+			left: auto;
+			right: 0;
+		}
+		
+		.point-3 {
+			@extend .point-1;
+			top: auto;
+			bottom: 0;
+		}
+		
+		.point-4 {
+			@extend .point-1;
+			top: 93px;
+			left: 0;
+		}
+			
+	}
+	
+}
+.spinner
+{
+  width: 202px;
+height: 202px;
+border-radius: 50%;
+top: 99px;
+left: 99px;
+position: absolute;
+
+ circle
+ {
+   stroke: #F85B5B;
+   stroke-width: 3px;
+   fill: none;
+   stroke-dasharray: 625;
+   transform-origin: center center;
+		transform: rotate(-90deg);
+    animation: spinner 60s linear infinite;
+ }
+}
+
+
+@keyframes beat {
+    0%
+    {
+      transform: scale(1);
+    }
+    35%
+    {
+      transform: scale(1.1);
+    }
+}
+@keyframes spinner {
+	from {
+		stroke-dashoffset: 625;
+		transform: rotate(-90deg) scaleY(1);
+	}
+	50% {
+		stroke-dashoffset: 0;
+		transform: rotate(-90deg) scaleY(1);
+	}
+	50.001% {
+		transform: rotate(-90deg) scaleY(-1);
+	}
+	to {
+		stroke-dashoffset: 625;
+		transform: rotate(-90deg) scaleY(-1);
+	}
+}
