@@ -1,0 +1,112 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+// use only the available space inside the 400x400 frame
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+    background: rgb(246,232,215); 
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    background: radial-gradient(ellipse at center,  rgba(246,232,215,1) 0%,rgba(218,190,155,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e8d7', endColorstr='#dabe9b',GradientType=1 ); 
+	overflow: hidden;
+
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.floor
+{
+    width: 400px;
+    height: 200px;
+    background: #232323;
+    position: absolute;
+    top: 0px;
+    right: -200px;
+  
+}
+.i-legs
+{
+    animation: fade-in .8s ease-out 1s;
+	animation-fill-mode: both;
+
+}
+.leg
+{
+    position: absolute;
+    width: 151px;
+    height: 244px;
+    // background: red;
+    bottom: 0;
+    left: -77px;
+    transform-origin: 50% 0;
+}
+.shoe
+{
+    background: url('https://100dayscss.com/codepen/doc-martens.svg') center center no-repeat;
+    width: 151px;
+    height: 125px;
+    position: absolute;
+    bottom: 0;
+}
+.left
+{
+    animation:swing 2s ease-in-out infinite;
+}
+.right
+{
+    animation:swing 2s ease-in-out 1s infinite;
+}
+.shoe
+{
+  animation:shoe-turn 2s ease-in-out infinite
+}
+
+@keyframes swing {
+    0% ,100%{
+        transform: rotate(-22deg);
+    }
+    50%{
+        transform: rotate(40deg);
+     
+    }
+}
+@keyframes shoe-turn {
+	0%, 100% {
+		transform: rotate(-10deg) translateY(-5px) translateX(10px);
+	}
+	25% {
+		transform: rotate(0deg) translateY(0px) translateX(0);
+	}
+	50% {
+		transform: rotate(10deg) translateY(-10px) translateX(10px);
+	}
+	75% {
+		transform: rotate(0deg) translateY(-30px) translateX(0);
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
