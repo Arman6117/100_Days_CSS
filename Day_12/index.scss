@@ -1,0 +1,145 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+// use only the available space inside the 400x400 frame
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #4cb6de;
+  color: #fff;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.quote
+{position: relative;
+margin: -9px -67px -9px -54px;
+padding: 0 7px;
+    &::before
+    {
+        display: block;
+		position: absolute;
+		z-index: 0;
+		content: '„';
+		font-family: Arial;
+		font-size: 250px;
+		color: #6AC2E3;
+		line-height: 35px;
+		top: -100px;
+		left: 7px;
+        opacity: 0.5;
+    }
+}
+p
+{
+    font-weight: 800;
+    font-size: 18px;
+    z-index: 1;
+    position: relative;
+
+    &.author
+    {
+        font-weight: 400;
+        font-style: italic;
+        font-size: 12px;
+        
+    }
+    
+}
+.tooltip
+{
+    background:#286f8a;
+    position: relative;
+    display: inline-block;
+    padding: 0px 8px 5px 8px;
+		margin: -10px 0;
+		cursor: pointer;
+
+    &:hover .info,
+    &:focus .info
+    {
+        visibility: visible;
+        opacity: 1;
+        transform: translate3d(0, 0,0);
+    }
+}
+.info
+{
+    position: absolute;
+background: #286F8A;
+// padding: -14px 39px 5px 10px;
+box-sizing: border-box;
+width: 300px;
+bottom: 37px;
+left: -91px;
+font-size: 16px;
+line-height: 24px;
+font-weight: 400;
+visibility: hidden;
+opacity: 0;
+cursor: text;
+transform: translate3d(0,-20px,0);
+transition: all .5s ease-out;
+
+&:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 14px;
+    bottom: -14px;
+    left: 0;
+}
+            
+&:after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #286F8A;
+}
+
+}
+.pronounce {
+    display: block;
+    background: #fff;
+    color: #286F8A;
+    padding: 8px 17px 10px 17px;
+    line-height: 16px;
+
+    .fa {
+        position: relative;
+        margin-left: 10px;
+        top: 1px;
+        cursor: pointer;
+        transition: all .2s ease-out;
+        
+        &:hover {
+            transform: scale(1.15) translate3d(0,0,0);
+            backface-visibility: none;
+        }
+    }
+}
+.text {
+    display: block;
+    padding: 13px 17px;
+}
